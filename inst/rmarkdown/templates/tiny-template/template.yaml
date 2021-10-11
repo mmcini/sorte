@@ -1,0 +1,5 @@
+name: Tiny Template
+description: >
+   LaTeX code with only a few pandoc settings
+   to use as reference when creating other templates
+create_dir: TRUE

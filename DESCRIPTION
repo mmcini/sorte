@@ -1,0 +1,13 @@
+Package: Sorte
+Title: Some other Rmarkdown template
+Version: 0.0.0.9000
+Authors@R: person("M", "Mancini", , "mrcl.mancini@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-4118-7943"))
+Description: Yet another... Oh, wrong name. Sorte is not... No no, not that too. Some other Rmarkdown template (Sorte) is a package that gathers some custom templates made for personal use, but are shared herein for those who may find them useful.
+Imports:
+    rmarkdown
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2

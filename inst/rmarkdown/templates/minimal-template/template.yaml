@@ -1,0 +1,5 @@
+name: Minimal Template
+description: >
+   Minimum LaTeX code required to compile a markdown
+   document
+create_dir: TRUE

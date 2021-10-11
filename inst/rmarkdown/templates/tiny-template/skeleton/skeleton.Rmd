@@ -1,0 +1,41 @@
+---
+title: "Tiny Template"
+author: "Minimalist"
+date: \today
+fontsize: 10pt
+colorlinks: true
+output: Sorte::tiny_template
+---
+
+# Tiny \LaTeX code
+
+Some lightweight LaTeX code that I personally use when starting new templates.
+Commented lines can be found at the source "tinytemplate.tex" file in the src
+folder of this template.
+
+Might be useful to understand what each part of the code is doing when creating
+your own templates. Use the code in _src_ and the _[Pandoc
+documentation](https://pandoc.org/MANUAL.html)_ to guide you when building a new
+template.
+
+# Variables
+
+Some of the Pandoc variables that can be set in the header of this tiny
+implementation are:
+
+* font (typeface, default=helvet)
+* fontsize (default=11pt),
+* papersize (default=a4paper),
+* fontenc (font encode, default=T1),
+* language (babel package, default=english),
+* geometry params (top, bottom, left, right, ...),
+* hyperref params:
+  + colorlinks=true/false, link/file/cite/urlcolor=
+    [color](https://steeven9.github.io/USI-LaTeX/media/img/morecolors.png),
+  + colorlinks is automatically set to true if any color is set,
+  + defaults:
+    - links = Maroom
+    - files = Maroom
+    - cite = Blue
+    - url = Blue
+* title, author and date.

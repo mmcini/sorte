@@ -1,0 +1,27 @@
+---
+output: Sorte::minimal_template
+---
+
+# Minimal Template
+
+This is the minimum LaTeX code needed so that can Pandoc can compile a
+document.
+
+## Structure
+
+Following is the minimum structure that is needed. Use it to begin a template
+completely from scratch.
+
+```
+% When creating a template from scratch
+% this is the minimum necessary to compile
+\documentclass{article} % or any other class
+
+% Somehow pandoc always uses hyperref
+% so it cannot be left out
+\usepackage{hyperref}
+
+\begin{document}
+$body$
+\end{document}
+```
