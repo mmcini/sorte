@@ -20,7 +20,7 @@
 \usepackage{iftex} % provides ifPDFTeX
 \ifPDFTeX
 \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
-\else
+\else % if xelatex or luatex
 \usepackage{fontspec,xltxtra,xunicode}
 \fi
 \usepackage{$if(font)$$font$$else$helvet$endif$}
@@ -96,7 +96,6 @@ $endif$
 $else$
     hidelinks}
 $endif$
-
 % ============================================================================
 
 % Title data =================================================================
