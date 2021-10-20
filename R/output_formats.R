@@ -31,3 +31,14 @@ tiny_template <- function(...) {
 
     pdf_document(..., template = template)
 }
+
+#' @export
+#' @rdname formats
+abstract_template <- function(...) {
+    template <- system.file(
+                "rmarkdown/templates/abstract-template/src/abstracttemplate.tex",
+                package = "Sorte"
+    )
+
+    pdf_document(..., template = template)
+}

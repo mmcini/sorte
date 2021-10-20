@@ -1,0 +1,177 @@
+% ---- Variables:
+%               font (typeface --default=helvet)
+%               fontsize (default=11pt),
+%               papersize (default=a4paper),
+%               fontenc (font encode --default=T1),
+%               language (babel package --default=english),
+%               geometry params (top, bottom, left, right, ...),
+%               hyperref params (link/file/cite/urlcolor),
+%               title, author and date.
+%               abstract_title (default=Abstract)
+%               keyword_title (default=Keywords)
+%               keywords (list of keywords)
+%               width (width of the abstract block --default=120mm)
+
+\documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$,
+               $if(papersize)$$papersize$$else$a4paper$endif$]
+               {article}
+
+% =============================================================================
+% PREAMBLE
+% =============================================================================
+% Fonts =======================================================================
+% setting different font pkgs for different engines
+\usepackage{iftex} % provides ifPDFTeX
+\ifPDFTeX
+\usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+\else %if xelatex or luatex
+\usepackage{fontspec,xltxtra,xunicode}
+\fi
+\usepackage{$if(font)$$font$$else$helvet$endif$}
+% ============================================================================
+
+% Language ===================================================================
+% setting document language
+\usepackage[$if(language)$$language$$else$english$endif$]{babel}
+% ============================================================================
+
+% Layout Settings ============================================================
+% indent and paragraph settings
+$if(geometry)$
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
+
+% paragraphs and indent
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% sets page style
+\pagestyle{empty}
+% ============================================================================
+
+% Tables =====================================================================
+$if(tables)$
+\usepackage{tabularx,longtable,booktabs,array}
+$endif$
+$if(multirow)$
+\usepackage{multirow}
+$endif$
+% ============================================================================
+
+% Lists ======================================================================
+% enables markdown lists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% ============================================================================
+
+% Images =====================================================================
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+$if(graphics)$
+\usepackage{graphicx}
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+
+\makeatletter
+	% -- if image width/height is bigger than your text, use linewidth/textheight
+	% -- else use the image dimensions
+	\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+	\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% Set default figure placement to htbp
+\makeatletter
+	\def\fps@figure{htbp}
+\makeatother
+$endif$
+% ============================================================================
+
+% Links ======================================================================
+\usepackage{hyperref}
+\PassOptionsToPackage{hyphens}{url} % hyperref calls url
+\urlstyle{same} % url font will be the same as current font (not monospace)
+\hypersetup{$if(colorlinks)$%
+    colorlinks=true,
+    linkcolor={$if(linkcolor)$$linkcolor$$else$Maroon$endif$},
+    filecolor={$if(filecolor)$$filecolor$$else$Maroon$endif$},
+    citecolor={$if(citecolor)$$citecolor$$else$Blue$endif$},
+    urlcolor={$if(urlcolor)$$urlcolor$$else$Blue$endif$}}
+$else$
+    hidelinks}
+$endif$
+% ============================================================================
+
+% Title data =================================================================
+$if(title)$
+\title{$title$}
+$endif$
+\author{$for(author)$$author$$sep$\\$endfor$}
+$if(date)$
+\date{$date$}
+$endif$
+
+\makeatletter
+\renewcommand{\maketitle}
+	{%
+		\begin{flushleft}
+			{\Large\textbf{\@title}}
+
+			\@author\\
+			\@date
+		\end{flushleft}
+	}
+\makeatother
+% ============================================================================
+
+% Abstract ===================================================================
+\renewenvironment{abstract}
+    {%
+        \begin{center}
+            \begin{minipage}{$if(width)$$width$$else$120mm$endif$}
+                \hrule
+                \vspace{2.5mm}
+                \begin{flushleft}
+                    \large
+					\textbf{\noindent
+						$if(abstract_title)$
+							$abstract_title$
+						$else$
+							Abstract
+						$endif$
+					}
+                \end{flushleft}
+    }%     ■ Unexpected "}"
+    {%
+
+                \vspace{2.5mm}
+				\textbf{\noindent
+					$if(keyword_title)$
+						$keyword_title$}:
+					$else$
+						Keywords}:
+					$endif$
+				$for(keywords)$$keywords$$sep$; $endfor$
+                \vspace{2.5mm}
+                \hrule
+            \end{minipage}
+		\end{center}
+    }
+% ============================================================================
+
+% ============================================================================
+% DOCUMENT
+% ============================================================================
+\begin{document}
+
+
+$if(title)$
+\maketitle
+$endif$
+
+\begin{abstract}
+	$body$
+\end{abstract}
+
+\end{document}
+% ============================================================================

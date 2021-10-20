@@ -4,11 +4,14 @@
 \alias{formats}
 \alias{minimal_template}
 \alias{tiny_template}
+\alias{abstract_template}
 \title{Defines the formats for the outputs of each template}
 \usage{
 minimal_template(...)
 
 tiny_template(...)
+
+abstract_template(...)
 }
 \arguments{
 \item{\dots}{Arguments for the *_document functions}

@@ -1,0 +1,17 @@
+---
+title: Simple abstract
+author: Some author
+date: Some date
+width: 110mm
+abstract_title: Simple Abstract
+keyword_title: Index terms
+keywords:
+ - simple template
+ - Rmarkdown
+output: Sorte::abstract_template
+---
+
+Template to build simple single-page abstracts. The abstract title is now
+Simple abstract, but can be changed with the "abstract_title" header. Other
+options include "keyword_title" and "keywords". The abstrct box width is 120mm
+by default, but can be altered via the "width" option.
