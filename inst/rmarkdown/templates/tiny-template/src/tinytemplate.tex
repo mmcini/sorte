@@ -81,6 +81,22 @@ $if(graphics)$
 \def\fps@figure{htbp}
 \makeatother
 $endif$
+
+% enables code syntax highlighting themes
+% via header "highlight: <theme name>"
+% ---- available themes are:
+%           default
+%           tango
+%           pygments
+%           kate
+%           monochrome
+%           espresso
+%           zenburn
+%           haddock
+%           texmate
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
 % ============================================================================
 
 % Links ======================================================================
