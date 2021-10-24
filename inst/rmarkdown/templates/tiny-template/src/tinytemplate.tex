@@ -116,8 +116,8 @@ $endif$
 % ============================================================================
 
 % Links ======================================================================
-\usepackage{hyperref}
 \PassOptionsToPackage{hyphens}{url} % hyperref calls url
+\usepackage{hyperref}
 \urlstyle{same} % url font will be the same as current font (not monospace)
 \hypersetup{$if(colorlinks)$
     colorlinks=true,
@@ -138,6 +138,14 @@ $endif$
 $if(date)$
 \date{$date$}
 $endif$
+% ============================================================================
+
+% user-defined options========================================================
+% packages and other preamble options
+% can be included in the yaml header
+$for(header-includes)$
+$header-includes$
+$endfor$
 % ============================================================================
 
 % ============================================================================
