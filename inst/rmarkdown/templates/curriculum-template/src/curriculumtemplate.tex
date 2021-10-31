@@ -66,42 +66,42 @@
 %%%% tikz environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\cvsectionline}
-		   {
-		   	\begin{tikzpicture}
-				\draw[gray,ultra thick] (0,0) -- (\textwidth,0);
-			\end{tikzpicture}
-			}
+           {
+           	\begin{tikzpicture}
+                \draw[gray,ultra thick] (0,0) -- (\textwidth,0);
+            \end{tikzpicture}
+           }
 
 \newcommand{\cvbackground}
-		   {
-		    \begin{tikzpicture}[remember picture, overlay]
-				\fill[headerbg] (current page.135) rectangle (current page.north east);
-				\fill[decorations] (149mm, -3mm) rectangle (150mm, 30mm);
-				\fill[decorations] (current page.135) rectangle (current page.44);
-			\end{tikzpicture}
-			\vspace{10mm}
-		   }
+           {
+            \begin{tikzpicture}[remember picture, overlay]
+                \fill[headerbg] (current page.135) rectangle (current page.north east);
+                \fill[decorations] (149mm, -3mm) rectangle (150mm, 30mm);
+                \fill[decorations] (current page.135) rectangle (current page.44);
+            \end{tikzpicture}
+            \vspace{10mm}
+           }
 
 \newcommand{\cvheaderinfo}[4]
-		   {
-		    \begin{tikzpicture}
-		    	\node[anchor=west] at (current page.128) {\huge \color{white} #1};
-				\node[anchor=west] at (current page.130) {\color{white} #2};
-                \node[anchor=west] at (current page.131) {\color{white} \faEnvelope \space #3};
-				\node[anchor=west] at (current page.132) {\color{white} \faMobile \space #4};
-		    \end{tikzpicture}
-		    }
+           {
+           \begin{tikzpicture}
+               \node[anchor=west] at (current page.128) {\huge \color{white} #1};
+               \node[anchor=west] at (current page.130) {\color{white} #2};
+               \node[anchor=west] at (current page.131) {\color{white} \faEnvelope \space #3};
+               \node[anchor=west] at (current page.132) {\color{white} \faMobile \space #4};
+           \end{tikzpicture}
+           }
 
 \newcommand{\cvheaderadress}[6]
-		   {
-		    \begin{tikzpicture}[remember picture, overlay]
-				\node[anchor=east] at (current page.52) {\large \color{white} \faHome \space Address};
-				\node[anchor=east] at (current page.50) {\footnotesize \color{white} #1 #2};
-				\node[anchor=east] at (current page.49) {\footnotesize \color{white} #3};
-				\node[anchor=east] at (current page.48) {\footnotesize \color{white} #4};
-				\node[anchor=east] at (current page.47) {\footnotesize \color{white} Born in #5 #6};
-			\end{tikzpicture}
-			}
+           {
+            \begin{tikzpicture}[remember picture, overlay]
+                \node[anchor=east] at (current page.52) {\large \color{white} \faHome \space Address};
+                \node[anchor=east] at (current page.50) {\footnotesize \color{white} #1 #2};
+                \node[anchor=east] at (current page.49) {\footnotesize \color{white} #3};
+                \node[anchor=east] at (current page.48) {\footnotesize \color{white} #4};
+                \node[anchor=east] at (current page.47) {\footnotesize \color{white} Born in #5 #6};
+            \end{tikzpicture}
+           }
 
 %%%% section environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -145,22 +145,22 @@
            }
 
 \newcommand{\sectiontitle}[1]
-		   {
-		    \Large\color{white}\textbf{#1}\normalsize
-		   }
+           {
+            \Large\color{white}\textbf{#1}\normalsize
+           }
 
 \newenvironment{paper}
-			   {\footnotesize
-				\setstretch{0.5}}
-			   {\par\normalsize}
+               {\footnotesize
+                \setstretch{0.5}}
+               {\par\normalsize}
 
 \newcommand{\paperentry}[4]
           {
            \begin{paper}
-           	\entrytitle{#1}% enter title and
-                       {#2}% URL/DOI
-           	\journal{#3}
-           	\additional{#4}
+                \entrytitle{#1}% enter title and
+                           {#2}% URL/DOI
+                \journal{#3}
+                \additional{#4}
            \end{paper}
           }
 
