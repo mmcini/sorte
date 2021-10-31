@@ -1,0 +1,147 @@
+---
+# author info
+author: Marcelo Mancini
+profession: Environmental and Sanitary Engineering student
+email: mrcl.mancini@gmail.com
+phone_number: 99 9999 99 99
+
+# address info
+address_street: Somewhere st.
+address_number: 999
+address_district: Some District
+address_city_state_country: Some town, MG, Brazil
+
+# age info
+age_month: December
+age_day_year: 05, 1992
+
+# document settings
+font: mathptmx
+color_system: RGB
+color_headerbg: 39, 39, 39
+color_decorations: 252, 215, 87
+color_pagebg: 163, 186, 195
+
+# output settings
+output: Sorte::curriculum_template
+---
+
+<!-- don't forget to insert the section name between curly braces! -->
+\normalsectionstart{Overview}
+Environmental Engineering student engaged in soil science research at the
+Federal University of Lavras -- Brazil, focused on machine learning applied to
+digital mapping. Working mainly with geoprocessing and proximal sensor
+research. Developed several scientific articles about novel methods to use
+proximal sensor data to assess and map soil attributes.
+\normalsectionend
+
+<!-- must insert section name and number of columns! -->
+\multicolsectionstart{Skills}{2}
+ + Knowledge and experience in data analysis using R and Python.
+
+ + Basic knowledge in C++, Java, LaTeX and Bash.
+
+ + Proficiency in supervised classification and statistical modeling applied to
+   digital soil mapping.
+
+ + Expertise in digital mapping, focused on soil science, but applicable to
+   diverse scientific fields.
+
+\multicolsectionend <!-- ^ this empty line is important! It won't work without it -->
+
+\multicolsectionstart{Highlights}{2}
+ + Awarded with the national [Scientific Initiation Highlight
+   Prize](https://www.gov.br/cnpq/pt-br/assuntos/noticias/premios/conheca-os-vencedores-da-18a-edicao-do-premio-destaque-na-iniciacao-cientifica-e-tecnologica-do-cnpq)
+   from the National Council for Scientific and Technological Development
+   (CNPq).
+
+ + Advanced English skills -- Highest score rank (C1) in TOEFL – ITP (2017).
+
+ + Intermediary Japanese skills.
+
+\multicolsectionend
+
+\multicolsectionstart{Published Scientific Works}{2}
+\paperentry{A sensors-based profile heterogeneity index for soil characterization}
+	  	   {https://doi.org/10.1016/j.catena.2021.105670}
+	  	   {Catena}
+      	   {2021-12 | journal-article}
+
+\paperentry{Formation and variation of a 4.5 m deep Oxisol in southeastern Brazil}
+           {https://doi.org/10.1016/j.catena.2021.105492}
+	  	   {Catena}
+      	   {2021-11 | journal-article}
+
+\paperentry{Prediction of soil nutrient content via pXRF spectrometry and its spatial variation in a highly variable tropical area}
+           {https://doi.org/10.1007/s11119-021-09825-8}
+	  	   {Pricision Agriculture}
+      	   {2021-06 | journal-article}
+
+
+\paperentry{National-scale spatial variations of soil magnetic susceptibility in Brazil}
+           {https://doi.org/10.1016/j.jsames.2021.103191}
+	  	   {Journal of South American Earth Sciences}
+      	   {2021-06 | journal-article}
+
+\paperentry{Rapid soil fertility prediction using X-ray fluorescence data and machine learning algorithms}
+           {https://doi.org/10.1016/j.catena.2020.105003}
+	  	   {Catena}
+      	   {2021-02 | journal-article}
+
+\paperentry{Digital soil mapping: Predicting soil classes distribution in large areas based on existing soil maps from similar small areas}
+           {https://doi.org/10.1590/1413-7054202145007921}
+	  	   {Ciência e Agrotecnologia}
+      	   {2021 | journal-article}
+
+\paperentry{pXRF in tropical soils: Methodology, applications, achievements and challenges}
+           {https://doi.org/10.1016/bs.agron.2020.12.001}
+	  	   {Advances in Agronomy}
+      	   {2021 | book-chapter}
+
+\paperentry{X-ray fluorescence spectrometry applied to digital mapping of soil fertility attributes in tropical region with elevated spatial variability}
+           {https://doi.org/10.1590/0001-3765202120200646}
+	  	   {Anais da Academia Brasileira de Ciências}
+      	   {2021 | journal-article}
+
+\paperentry{From sensor data to Munsell color system: Machine learning algorithm applied to tropical soil color classification via Nix™ Pro sensor}
+           {https://doi.org/10.1016/j.geoderma.2020.114471}
+	  	   {Geoderma}
+      	   {2020-10 | journal-article}
+
+\paperentry{Soil texture prediction using portable X-ray fluorescence spectrometry and visible near-infrared diffuse reflectance spectroscopy}
+           {https://doi.org/10.1016/j.geoderma.2020.114553}
+	  	   {Geoderma}
+      	   {2020-10 | journal-article}
+
+\paperentry{Soil parent material prediction for Brazil via proximal soil sensing}
+           {https://doi.org/10.1016/j.geodrs.2020.e00310}
+	  	   {Geoderma Regional}
+      	   {2020-09 | journal-article}
+
+\paperentry{Soil subgroup prediction via portable X-ray fluorescence and visible near-infrared spectroscopy}
+           {https://doi.org/10.1016/j.geoderma.2020.114212}
+	  	   {Geoderma}
+      	   {2020-04 | journal-article}
+
+\paperentry{Growth, mineral nutrition, and physiological parameters of Eucalyptus urophylla cultivated in soils with different nutrient reserves}
+           {https://doi.org/10.18671/scifor.v48n125.02}
+	  	   {Scientia Forestalis}
+      	   {2020-03 | journal-article}
+
+\paperentry{Soils of the Brazilian Coastal Plains biome: prediction of chemical attributes via portable X-ray fluorescence (pXRF) spectrometry and robust prediction models}
+           {https://doi.org/10.1071/sr20136}
+	  	   {Soil Research}
+      	   {2020 | journal-article}
+
+\paperentry{Parent material distribution mapping from tropical soils data via machine learning and portable X-ray fluorescence (pXRF) spectrometry in Brazil}
+           {https://doi.org/10.1016/j.geoderma.2019.113885}
+	  	   {Geoderma}
+      	   {2019-11 | journal-article}
+
+\paperentry{Tracing tropical soil parent material analysis via portable X-ray fluorescence (pXRF) spectrometry in Brazilian Cerrado}
+           {https://doi.org/10.1016/j.geoderma.2018.10.026}
+	  	   {Geoderma}
+      	   {2019-03 | journal-article}
+
+\multicolsectionend
+\cvsectionline <!-- you can also insert horizontal lines separately -->

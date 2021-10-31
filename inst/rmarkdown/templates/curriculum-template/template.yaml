@@ -1,0 +1,5 @@
+name: Curriculum Template
+description: >
+	Create a curriculum document based on a defined 
+	template using only a little LaTeX code
+create_dir: TRUE

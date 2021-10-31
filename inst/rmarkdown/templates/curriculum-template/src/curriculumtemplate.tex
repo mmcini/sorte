@@ -1,0 +1,191 @@
+\documentclass[10pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% packages														%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[a4paper, total={200mm, 267mm}]{geometry}
+\usepackage{tikz}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+
+% setting different font pkgs for different engines
+\usepackage{iftex} % provides ifPDFTeX
+\ifPDFTeX
+\usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+\else % if xelatex or luatex
+\usepackage{fontspec,xltxtra,xunicode}
+\fi
+\usepackage{$if(font)$$font$$else$lmodern$endif$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% layout settings												%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\pagestyle{empty}
+\renewcommand{\familydefault}{\sfdefault}
+\setlist[itemize,1]{label=\textcolor{decorations}{\textbullet}} % global itemize options
+
+% enables markdown lists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% colors														%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{headerbg} % header background color
+            {$if(color_system)$$color_system$$else$RGB$endif$}
+            {$if(color_headerbg)$$color_headerbg$$else$39, 39, 39$endif$}
+
+\definecolor{decorations} % color of details
+            {$if(color_system)$$color_system$$else$RGB$endif$}
+            {$if(color_decorations)$$color_decorations$$else$252, 215, 87$endif$}
+
+\definecolor{pagebg} % bg color
+            {$if(color_system)$$color_system$$else$RGB$endif$}
+            {$if(color_pagebg)$$color_pagebg$$else$163, 186, 195$endif$}
+
+% sets page background color
+\pagecolor{pagebg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% commands	 and environments									%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\entrytitle}[2]{\href{#2}{\textbf{#1}\newline}}
+\newcommand{\journal}[1]{\textit{#1}\newline}
+\newcommand{\additional}[1]{#1}
+
+%%%% tikz environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\cvsectionline}
+		   {
+		   	\begin{tikzpicture}
+				\draw[gray,ultra thick] (0,0) -- (\textwidth,0);
+			\end{tikzpicture}
+			}
+
+\newcommand{\cvbackground}
+		   {
+		    \begin{tikzpicture}[remember picture, overlay]
+				\fill[headerbg] (current page.135) rectangle (current page.north east);
+				\fill[decorations] (149mm, -3mm) rectangle (150mm, 30mm);
+				\fill[decorations] (current page.135) rectangle (current page.44);
+			\end{tikzpicture}
+			\vspace{10mm}
+		   }
+
+\newcommand{\cvheaderinfo}[4]
+		   {
+		    \begin{tikzpicture}
+		    	\node[anchor=west] at (current page.128) {\huge \color{white} #1};
+				\node[anchor=west] at (current page.130) {\color{white} #2};
+                \node[anchor=west] at (current page.131) {\color{white} \faEnvelope \space #3};
+				\node[anchor=west] at (current page.132) {\color{white} \faMobile \space #4};
+		    \end{tikzpicture}
+		    }
+
+\newcommand{\cvheaderadress}[6]
+		   {
+		    \begin{tikzpicture}[remember picture, overlay]
+				\node[anchor=east] at (current page.52) {\large \color{white} \faHome \space Address};
+				\node[anchor=east] at (current page.50) {\footnotesize \color{white} #1 #2};
+				\node[anchor=east] at (current page.49) {\footnotesize \color{white} #3};
+				\node[anchor=east] at (current page.48) {\footnotesize \color{white} #4};
+				\node[anchor=east] at (current page.47) {\footnotesize \color{white} Born in #5 #6};
+			\end{tikzpicture}
+			}
+
+%%%% section environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{newnormalsection}[1] % provide section name
+               {
+                \Large\color{white}\textbf{#1}\normalsize\\
+                \cvsectionline\par
+               }
+               {
+                \vspace{3mm}
+               }
+
+\newcommand{\normalsectionstart}[1]
+           {
+            \begin{newnormalsection}{#1}
+           }
+
+\newcommand{\normalsectionend}
+           {
+            \end{newnormalsection}
+           }
+
+\newenvironment{newmulticolsection}[2] % provide section name and number of cols
+               {
+                \Large\color{white}\textbf{#1}\normalsize\\
+                \cvsectionline
+                \begin{multicols}{#2}
+               }
+               {
+                \end{multicols}
+               }
+
+\newcommand{\multicolsectionstart}[2]
+		   {
+            \begin{newmulticolsection}{#1}{#2}
+           }
+           
+\newcommand{\multicolsectionend}
+		   {
+           \end{newmulticolsection}
+           }
+
+\newcommand{\sectiontitle}[1]
+		   {
+		    \Large\color{white}\textbf{#1}\normalsize
+		   }
+
+\newenvironment{paper}
+			   {\footnotesize
+				\setstretch{0.5}}
+			   {\par\normalsize}
+
+\newcommand{\paperentry}[4]
+          {
+           \begin{paper}
+           	\entrytitle{#1}% enter title and
+                       {#2}% URL/DOI
+           	\journal{#3}
+           	\additional{#4}
+           \end{paper}
+          }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% main document												%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%% background and header info %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% do not change the order or
+%% add newlines between commands
+\cvbackground
+\cvheaderinfo{$if(author)$$author$$endif$} % name
+             {$if(profession)$$profession$$endif$} % profession
+             {$if(email)$$email$$endif$} % e-mail
+             {$if(phone_number)$$phone_number$$endif$} % phone number
+
+\cvheaderadress{$if(address_street)$$address_street$$endif$} % address - street
+               {$if(adress_number)$$address_number$$endif$} % address - number
+               {$if(address_district)$$address_district$$endif$} % address - district
+               {$if(address_city_state_country)$$address_city_state_country$$endif$} % address - city, country
+               {$if(age_month)$$age_month$$endif$} % age - month
+               {$if(age_day_year)$$age_day_year$$endif$} % age - day, year
+
+$body$
+\end{document}

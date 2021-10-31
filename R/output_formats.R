@@ -42,3 +42,14 @@ abstract_template <- function(...) {
 
     pdf_document(..., template = template)
 }
+
+#' @export
+#' @rdname formats
+curriculum_template <- function(...) {
+    template <- system.file(
+                "rmarkdown/templates/curriculum-template/src/curriculumtemplate.tex",
+                package = "Sorte"
+    )
+
+    pdf_document(..., template = template)
+}

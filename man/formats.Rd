@@ -5,6 +5,7 @@
 \alias{minimal_template}
 \alias{tiny_template}
 \alias{abstract_template}
+\alias{curriculum_template}
 \title{Defines the formats for the outputs of each template}
 \usage{
 minimal_template(...)
@@ -12,6 +13,8 @@ minimal_template(...)
 tiny_template(...)
 
 abstract_template(...)
+
+curriculum_template(...)
 }
 \arguments{
 \item{\dots}{Arguments for the *_document functions}
