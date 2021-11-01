@@ -12,13 +12,14 @@ address_district: Some District
 address_city_state_country: Some town, MG, Brazil
 
 # age info
-age_month: December
-age_day_year: 05, 1992
+age_info: Born in December 05, 1992
 
 # document settings
 font: mathptmx
 fontsize: 10pt
+colorlinks: true
 color_system: RGB
+color_font: 255, 255, 255
 color_headerbg: 39, 39, 39
 color_decorations: 252, 215, 87
 color_pagebg: 54, 65, 86

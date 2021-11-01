@@ -4,13 +4,12 @@
 %% packages                                                     %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[a4paper, total={200mm, 267mm}]{geometry}
+\usepackage[a4paper, top=30mm, total={200mm, 267mm}]{geometry}
 \usepackage{tikz}
 \usepackage{fontawesome}
 \usepackage{xcolor}
 \usepackage{multicol}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
 \usepackage{setspace}
 
 % setting different font pkgs for different engines
@@ -40,6 +39,10 @@
 %% colors                                                       %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\definecolor{fontcolor} % header background color
+            {$if(color_system)$$color_system$$else$RGB$endif$}
+            {$if(color_font)$$color_font$$else$255, 255, 255$endif$}
+
 \definecolor{headerbg} % header background color
             {$if(color_system)$$color_system$$else$RGB$endif$}
             {$if(color_headerbg)$$color_headerbg$$else$39, 39, 39$endif$}
@@ -50,11 +53,27 @@
 
 \definecolor{pagebg} % bg color
             {$if(color_system)$$color_system$$else$RGB$endif$}
-            {$if(color_pagebg)$$color_pagebg$$else$163, 186, 195$endif$}
+            {$if(color_pagebg)$$color_pagebg$$else$54, 65, 86$endif$}
+
+\definecolor{linkcolor} % bg color
+            {$if(color_system)$$color_system$$else$RGB$endif$}
+            {$if(color_link)$$color_link$$else$225, 187, 128$endif$}
 
 % sets page background color
 \pagecolor{pagebg}
 
+\PassOptionsToPackage{hyphens}{url} % hyperref calls url
+\usepackage{hyperref}
+\urlstyle{same} % url font will be the same as current font (not monospace)
+\hypersetup{$if(colorlinks)$
+    colorlinks=true,
+    linkcolor={linkcolor},
+    filecolor={linkcolor},
+    citecolor={linkcolor},
+    urlcolor={linkcolor}}
+$else$
+    hidelinks}
+$endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% commands and environments                                   %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,22 +103,22 @@
 
 \newcommand{\cvheaderinfo}[4]
            {
-           \begin{tikzpicture}
-               \node[anchor=west] at (current page.128) {\huge \color{white} #1};
-               \node[anchor=west] at (current page.130) {\color{white} #2};
-               \node[anchor=west] at (current page.131) {\color{white} \faEnvelope \space #3};
-               \node[anchor=west] at (current page.132) {\color{white} \faMobile \space #4};
+           \begin{tikzpicture}[remember picture, overlay]
+               \node[anchor=west] at (current page.128) {\huge \color{fontcolor} #1};
+               \node[anchor=west] at (current page.130) {\color{fontcolor} #2};
+               \node[anchor=west] at (current page.131) {\color{fontcolor} \faEnvelope \space #3};
+               \node[anchor=west] at (current page.132) {\color{fontcolor} \faMobile \space #4};
            \end{tikzpicture}
            }
 
-\newcommand{\cvheaderadress}[6]
+\newcommand{\cvheaderadress}[5]
            {
             \begin{tikzpicture}[remember picture, overlay]
-                \node[anchor=east] at (current page.52) {\large \color{white} \faHome \space Address};
-                \node[anchor=east] at (current page.50) {\footnotesize \color{white} #1 #2};
-                \node[anchor=east] at (current page.49) {\footnotesize \color{white} #3};
-                \node[anchor=east] at (current page.48) {\footnotesize \color{white} #4};
-                \node[anchor=east] at (current page.47) {\footnotesize \color{white} Born in #5 #6};
+                \node[anchor=east] at (current page.52) {\large \color{fontcolor} \faHome \space Address};
+                \node[anchor=east] at (current page.50) {\footnotesize \color{fontcolor} #1 #2};
+                \node[anchor=east] at (current page.49) {\footnotesize \color{fontcolor} #3};
+                \node[anchor=east] at (current page.48) {\footnotesize \color{fontcolor} #4};
+                \node[anchor=east] at (current page.47) {\footnotesize \color{fontcolor} #5};
             \end{tikzpicture}
            }
 
@@ -107,7 +126,7 @@
 
 \newenvironment{newnormalsection}[1] % provide section name
                {
-                \Large\color{white}\textbf{#1}\normalsize\\
+                \Large\color{fontcolor}\textbf{#1}\normalsize\\
                 \cvsectionline\par
                }
                {
@@ -126,7 +145,7 @@
 
 \newenvironment{newmulticolsection}[2] % provide section name and number of cols
                {
-                \Large\color{white}\textbf{#1}\normalsize\\
+                \Large\color{fontcolor}\textbf{#1}\normalsize\\
                 \cvsectionline
                 \begin{multicols}{#2}
                }
@@ -146,7 +165,7 @@
 
 \newcommand{\sectiontitle}[1]
            {
-            \Large\color{white}\textbf{#1}\normalsize
+            \Large\color{fontcolor}\textbf{#1}\normalsize
            }
 
 \newenvironment{paper}
@@ -184,8 +203,7 @@
                {$if(adress_number)$$address_number$$endif$} % address - number
                {$if(address_district)$$address_district$$endif$} % address - district
                {$if(address_city_state_country)$$address_city_state_country$$endif$} % address - city, country
-               {$if(age_month)$$age_month$$endif$} % age - month
-               {$if(age_day_year)$$age_day_year$$endif$} % age - day, year
+               {$if(age_info)$$age_info$$endif$} % information about age
 
 $body$
 
