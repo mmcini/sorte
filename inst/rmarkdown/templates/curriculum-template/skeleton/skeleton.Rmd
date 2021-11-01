@@ -2,7 +2,7 @@
 # author info
 author: Marcelo Mancini
 profession: Environmental and Sanitary Engineering student
-email: mrcl.mancini@gmail.com
+email: mrcl.mancini@gmail.com -- \href{www.github.com/mmcini}{github.com/mmcini}
 phone_number: 99 9999 99 99
 
 # address info
@@ -17,26 +17,33 @@ age_day_year: 05, 1992
 
 # document settings
 font: mathptmx
+fontsize: 10pt
 color_system: RGB
 color_headerbg: 39, 39, 39
 color_decorations: 252, 215, 87
-color_pagebg: 163, 186, 195
+color_pagebg: 54, 65, 86
 
 # output settings
 output: Sorte::curriculum_template
 ---
 
 <!-- don't forget to insert the section name between curly braces! -->
+\normalsectionstart{Objectives}
+Undergraduate student on his last year of studies seeking to apply and further
+develop his expertise in environmental data analysis. Searching for a remote
+internship in order to work and study concomitantly.
+\normalsectionend
+
 \normalsectionstart{Overview}
 Environmental Engineering student engaged in soil science research at the
 Federal University of Lavras -- Brazil, focused on machine learning applied to
 digital mapping. Working mainly with geoprocessing and proximal sensor
-research. Developed several scientific articles about novel methods to use
-proximal sensor data to assess and map soil attributes.
+research. Developed award-winning scientific articles about novel methods
+towards the use of proximal sensor data to assess and map soil attributes.
 \normalsectionend
 
-<!-- must insert section name and number of columns! -->
-\multicolsectionstart{Skills}{2}
+<!-- must insert section name and number of columns (at least 2) or it wont work! -->
+\multicolsectionstart{Skills and Highlights}{2}
  + Knowledge and experience in data analysis using R and Python.
 
  + Basic knowledge in C++, Java, LaTeX and Bash.
@@ -47,19 +54,16 @@ proximal sensor data to assess and map soil attributes.
  + Expertise in digital mapping, focused on soil science, but applicable to
    diverse scientific fields.
 
-\multicolsectionend <!-- ^ this empty line is important! It won't work without it -->
-
-\multicolsectionstart{Highlights}{2}
  + Awarded with the national [Scientific Initiation Highlight
    Prize](https://www.gov.br/cnpq/pt-br/assuntos/noticias/premios/conheca-os-vencedores-da-18a-edicao-do-premio-destaque-na-iniciacao-cientifica-e-tecnologica-do-cnpq)
    from the National Council for Scientific and Technological Development
    (CNPq).
 
- + Advanced English skills -- Highest score rank (C1) in TOEFL – ITP (2017).
+ + Advanced English skills -- Highest score rank (C1) in TOEFL -- ITP (2017).
 
  + Intermediary Japanese skills.
 
-\multicolsectionend
+\multicolsectionend <!-- ^ this empty line is important! It won't work without it -->
 
 \multicolsectionstart{Published Scientific Works}{2}
 \paperentry{A sensors-based profile heterogeneity index for soil characterization}
@@ -144,4 +148,3 @@ proximal sensor data to assess and map soil attributes.
       	   {2019-03 | journal-article}
 
 \multicolsectionend
-\cvsectionline <!-- you can also insert horizontal lines separately -->
