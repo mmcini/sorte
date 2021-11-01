@@ -81,6 +81,7 @@ $endif$
 \newcommand{\entrytitle}[2]{\href{#2}{\textbf{#1}\newline}}
 \newcommand{\journal}[1]{\textit{#1}\newline}
 \newcommand{\additional}[1]{#1}
+\newcommand{\addresstitle}{$if(address_title)$$address_title$$else$Address$endif$}
 
 %%%% tikz environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -114,7 +115,7 @@ $endif$
 \newcommand{\cvheaderadress}[5]
            {
             \begin{tikzpicture}[remember picture, overlay]
-                \node[anchor=east] at (current page.52) {\large \color{fontcolor} \faHome \space Address};
+                \node[anchor=east] at (current page.52) {\large \color{fontcolor} \faHome \space \addresstitle};
                 \node[anchor=east] at (current page.50) {\footnotesize \color{fontcolor} #1 #2};
                 \node[anchor=east] at (current page.49) {\footnotesize \color{fontcolor} #3};
                 \node[anchor=east] at (current page.48) {\footnotesize \color{fontcolor} #4};

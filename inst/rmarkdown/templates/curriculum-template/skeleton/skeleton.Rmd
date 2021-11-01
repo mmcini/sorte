@@ -1,4 +1,7 @@
 ---
+# Following my own Curriculum as a reference, customize
+# the yml header and the Rmd contents with you own info
+
 # author info
 author: Marcelo Mancini
 profession: Environmental and Sanitary Engineering student
@@ -6,6 +9,7 @@ email: mrcl.mancini@gmail.com -- \href{www.github.com/mmcini}{github.com/mmcini}
 phone_number: 99 9999 99 99
 
 # address info
+address_title: Address # title of the address section
 address_street: Somewhere st.
 address_number: 999
 address_district: Some District
