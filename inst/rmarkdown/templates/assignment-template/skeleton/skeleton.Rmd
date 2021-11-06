@@ -1,0 +1,27 @@
+---
+title: Assignment Title
+subtitle: Subtitle goes here
+
+date_info:
+    - City, State
+    - November of 2021
+
+# info about the assignment course
+course_info:
+    - Course of the assignment
+    - Other additional info
+
+# student info
+author_info:
+    - Student name
+    - Additional info
+
+header-includes:
+    - \usepackage{blindtext}
+
+output: Sorte::assignment_template
+---
+
+# Under development
+
+\blindtext

@@ -1,0 +1,5 @@
+name: UFLA Assignment Template
+description: >
+   Template to make assignments for the
+   Federal University of Lavras (UFLA).
+create_dir: TRUE

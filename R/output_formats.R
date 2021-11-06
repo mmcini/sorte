@@ -53,3 +53,14 @@ curriculum_template <- function(...) {
 
     pdf_document(..., template = template)
 }
+
+#' @export
+#' @rdname formats
+assignment_template <- function(...) {
+    template <- system.file(
+                "rmarkdown/templates/assignment-template/src/assignmenttemplate.tex",
+                package = "Sorte"
+    )
+
+    pdf_document(..., template = template)
+}
