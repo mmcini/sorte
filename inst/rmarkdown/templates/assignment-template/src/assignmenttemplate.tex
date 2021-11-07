@@ -1,10 +1,11 @@
-% ---- Variables:
+% ---- Yml header options:
 %               title, subtitle
 %               date_info (text that goes after title/subtitle)
 %               course_info (text at the bottom left of the page)
 %               author_info (text at the bottom left of the page)
-%               font (typeface --default=helvet)
-%               fontsize (default=11pt),
+%               font (typeface)
+%               sansfont (typeface of sans serif font, xelatex only)
+%               fontsize (default=12pt),
 %               papersize (default=a4paper),
 %               fontenc (font encode --default=T1),
 %               language (babel package --default=english),
@@ -44,35 +45,6 @@ $endif$
 % Language ===================================================================
 % setting document language
 \usepackage[$if(language)$$language$$else$english$endif$]{babel}
-% ============================================================================
-
-% Layout Settings ============================================================
-% indent and paragraph settings
-$if(geometry)$
-\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
-$else$
-\usepackage{geometry}
-$endif$
-
-% paragraphs and indent
-$if(indent_first)$
-\usepackage{indentfirst}
-$endif$
-\setlength{\parindent}{$if(indent)$$indent$$else$1.2cm$endif$}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-
-% page formatting
-\pagestyle{plain}
-
-% section numbering
-$if(numbersections)$
-\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
-$else$
-\setcounter{secnumdepth}{-\maxdimen} % removes section numbering
-$endif$
-
-% math support
-\usepackage{amsmath,amssymb}
 % ============================================================================
 
 % Tables =====================================================================
@@ -142,10 +114,10 @@ $endif$
 \urlstyle{same} % url font will be the same as current font (not monospace)
 \hypersetup{$if(colorlinks)$
     colorlinks=true,
-    linkcolor={$if(linkcolor)$$linkcolor$$else$Maroon$endif$},
-    filecolor={$if(filecolor)$$filecolor$$else$Maroon$endif$},
-    citecolor={$if(citecolor)$$citecolor$$else$Blue$endif$},
-    urlcolor={$if(urlcolor)$$urlcolor$$else$Blue$endif$}}
+    linkcolor={$if(linkcolor)$$linkcolor$$else$uflablue$endif$},
+    filecolor={$if(filecolor)$$filecolor$$else$uflablue$endif$},
+    citecolor={$if(citecolor)$$citecolor$$else$uflablue$endif$},
+    urlcolor={$if(urlcolor)$$urlcolor$$else$uflablue$endif$}}
 $else$
     hidelinks}
 $endif$
@@ -155,15 +127,67 @@ $endif$
 \newcommand{\makebg}
            {
             \begin{tikzpicture}[remember picture, overlay]
-                
                 \fill [color=uflablue] (current page.south west) rectangle (current page.105);
-                \node[anchor=south east, inner sep=0pt, rotate=90, opacity=0.5] (uflalogo) at (current page.105)
-                    {\includegraphics[width=165mm]{../assets/ufla_logo_notext.png}};
-                \node[anchor=south, inner sep=0pt, xscale=-1, opacity=0.2] (uflasymbol) at (current page.295)
-                    {\includegraphics[width=150mm]{../assets/ufla_logo_symbol.png}};
-            
+                \node[anchor=south east, inner sep=0pt, rotate=90, opacity=0.5]
+                    (uflanotext) at (current page.105)
+                    {\includegraphics[width=165mm]{ufla_logo_notext.png}};
+                \node[anchor=south, inner sep=0pt, xscale=-1, opacity=0.2]
+                    (uflasymbol) at (current page.295)
+                    {\includegraphics[width=150mm]{ufla_logo_symbol.png}};
             \end{tikzpicture}
            }
+\newcommand{\makeheader}
+           {
+            \begin{tikzpicture}[remember picture, overlay, shift={(current page.north west)}]
+                \fill[color = uflablue, opacity=0.5] (0,0) rectangle (\pdfpagewidth, -2cm);
+                \node[anchor=south east, inner sep=0pt, opacity = 0.3] (uflanotext) at (\pdfpagewidth, -2cm)
+                    {\includegraphics[height=2cm]{ufla_logo_notext.png}};
+            \end{tikzpicture}
+           }
+\newcommand{\makefooter}
+           {
+            \begin{tikzpicture}[remember picture, overlay, shift={(current page.south west)}]
+                \node[anchor=south, inner sep=0pt, opacity = 0.05] (uflasymbol) at (1cm, -1cm)
+                    {\includegraphics[height=5cm]{ufla_logo_symbol.png}};
+            \end{tikzpicture}
+           }
+% ============================================================================
+
+% Layout Settings ============================================================
+% indent and paragraph settings
+$if(geometry)$
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$else$
+\usepackage[left=2.5cm, right=2.5cm,top=3cm]{geometry}
+$endif$
+
+% paragraphs and indent
+$if(indent_first)$
+\usepackage{indentfirst}
+$endif$
+\setlength{\parindent}{$if(indent)$$indent$$else$1.2cm$endif$}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% page formatting
+% header options
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{\makeheader}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot{\makefooter}
+\rfoot{\thepage}
+\setlength{\headheight}{14.5pt}
+
+% section numbering
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{-\maxdimen} % removes section numbering
+$endif$
+
+% math support
+\usepackage{amsmath,amssymb}
 % ============================================================================
 
 % Title data =================================================================
@@ -189,18 +213,23 @@ $endfor$
 
 \begin{titlepage}
 
+% defines specific margins for title page
 \newgeometry{left=5mm, bottom=10mm}
 
 \makebg
 
 \noindent
 \begin{minipage}[t][0.9\textheight][t]{0.3\textwidth}
-
     \vfill
+
     \small
+
     \sffamily
+
     \color{white}
+
     \rule{\textwidth}{1mm}
+
     \raggedleft
     
     \vspace{5mm}
@@ -211,12 +240,11 @@ $endfor$
     \vspace{10mm}
 
     \authorinfo
-    
 \end{minipage} \hspace{10mm}
 %
 \begin{minipage}[t][0.5\textheight][c]{0.6\textwidth}
-
     \sffamily
+
     {\huge\bfseries\title}
 
     \vspace{5mm}
@@ -232,6 +260,7 @@ $endfor$
     \dateinfo
 \end{minipage}
 
+% restore previous margin options
 \restoregeometry
 
 \end{titlepage}
@@ -239,7 +268,6 @@ $endfor$
 $if(toc)$
 \tableofcontents
 $endif$
-
 
 $body$
 \end{document}

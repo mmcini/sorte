@@ -16,12 +16,74 @@ author_info:
     - Student name
     - Additional info
 
-header-includes:
-    - \usepackage{blindtext}
+# document settings
+tables: true
+fontsize: 10pt
+indent_first: false
+indent: 0pt
 
 output: Sorte::assignment_template
 ---
 
-# Under development
+# Assignment
 
-\blindtext
+Template to use in assigments, or other similar types of documents, for the
+Federal University of Lavras (UFLA). Do not forget to set **tables: true** to add
+tables via code chunks if there are no tables outside chunks (or else pandoc will
+not load the packages).
+
+Header options include:
+
+\footnotesize
+```{r, warning = F}
+# ---- Header opts:
+#               title, subtitle
+#               date_info (text that goes after title/subtitle)
+#               course_info (text at the bottom left of the page)
+#               author_info (text at the bottom left of the page)
+#               font (typeface)
+#               sansfont (typeface of sans serif font, xelatex only)
+#               fontsize (default=11pt),
+#               papersize (default=a4paper),
+#               fontenc (font encode --default=T1),
+#               language (babel package --default=english),
+#               geometry params (top, bottom, left, right, ...),
+#               hyperref params (link/file/cite/urlcolor),
+#               indent_first: indents first paragraph (bool --default=false)
+#               indent: indentation length (default=1.2cm)
+# code example ==============================================================
+library(dplyr)
+library(tibble)
+library(broom)
+library(knitr)
+library(kableExtra)
+
+raw_data <- read_table("Harverster Hour B1 B2 B3 B4 B5
+                        C1            H1      43 41 47 38 48
+                        C1            H2      61 59 54 56 58
+                        C2            H1      39 35 49 40 45
+                        C2            H2      67 59 62 65 64
+                        C3            H1      71 73 74 77 75
+                        C3            H2      52 57 58 56 59")
+
+# organizing data for anova
+organized_data <- raw_data %>%
+                   pivot_longer(data = raw_data, cols = c(3:7),
+                                names_to = "Block",
+                                values_to = "Losses")
+
+# build linear model and anova
+l_model <- lm(Losses~Block + Harverster * Hour,
+              data = organized_data)
+anova <- anova(l_model) %>%
+         tidy()
+
+# check and print anova table
+anova %>%
+    rename(Source = term, DF = df, SS = sumsq,        # rename cols
+           MS = meansq, F = statistic,
+           "p-value" = p.value) %>%
+    mutate(across(where(is.numeric), round, 2)) %>%   # round
+    kable(format = "latex", booktabs = T) %>%         # options to
+    kable_styling(latex_options = "hold_position")    # create table
+```
