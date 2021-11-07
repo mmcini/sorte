@@ -52,7 +52,7 @@ Header options include:
 #               indent_first: indents first paragraph (bool --default=false)
 #               indent: indentation length (default=1.2cm)
 # code example ==============================================================
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 library(broom)
 library(knitr)
 library(kableExtra)
