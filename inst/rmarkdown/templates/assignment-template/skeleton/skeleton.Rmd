@@ -53,7 +53,7 @@ Header options include:
 #               indent: indentation length (default=1.2cm)
 # code example ==============================================================
 library(dplyr)
-library(tibble)
+library(tidyr)
 library(broom)
 library(knitr)
 library(kableExtra)
