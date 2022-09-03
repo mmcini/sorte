@@ -1,0 +1,5 @@
+name: Abstract Template
+description: >
+   Template to make abstracts for congresses
+   or presentations in general
+create_dir: TRUE
