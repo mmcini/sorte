@@ -4,7 +4,7 @@
 %% packages                                                     %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[a4paper, top=30mm, total={200mm, 267mm}]{geometry}
+\usepackage[a4paper, top=30mm, bottom=30mm, total={200mm, 267mm}]{geometry}
 \usepackage{tikz}
 \usepackage{fontawesome}
 \usepackage{xcolor}
@@ -75,7 +75,7 @@ $else$
     hidelinks}
 $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% commands and environments                                   %%%%%%%%%%%%%%%%%%%%%%%%%%
+%% commands and environments                                    %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\entrytitle}[2]{\href{#2}{\textbf{#1}\newline}}
@@ -170,9 +170,9 @@ $endif$
            }
 
 \newenvironment{paper}
-               {\footnotesize
+               {\begin{minipage}{\columnwidth}\footnotesize
                 \setstretch{0.5}}
-               {\par\normalsize}
+               {\end{minipage}\par\normalsize}
 
 \newcommand{\paperentry}[4]
           {
