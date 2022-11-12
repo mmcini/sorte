@@ -33,123 +33,98 @@ output: Sorte::curriculum_template
 ---
 
 <!-- don't forget to insert the section name between curly braces! -->
-\normalsectionstart{Objectives}
-Undergraduate student on his last year of studies seeking to apply and further
-develop his expertise in environmental data analysis. Searching for a remote
-internship in order to work and study concomitantly.
-\normalsectionend
-
 \normalsectionstart{Overview}
-Environmental Engineering student engaged in soil science research at the
-Federal University of Lavras -- Brazil, focused on machine learning applied to
-digital mapping. Working mainly with geoprocessing and proximal sensor
-research. Developed award-winning scientific articles about novel methods
-towards the use of proximal sensor data to assess and map soil attributes.
+Soil Scientist and Environmental Engineer engaged in research focused on digital soil mapping and
+morphometrics. Working mainly with geoprocessing and proximal sensor research. Expert in portable
+X-ray fluorescence spectrometry (pXRF) and Visible and Near-Infrared diffuse reflectance
+spectroscopy (Vis-NIR DRS) applied to soil analyses. Developed award-winning scientific articles
+about novel methods towards the use of proximal sensor data to assess and map soil attributes.
 \normalsectionend
 
 <!-- must insert section name and number of columns (at least 2) or it wont work! -->
 \multicolsectionstart{Skills and Highlights}{2}
- + Knowledge and experience in data analysis using R and Python.
-
- + Basic knowledge in C++, Java, LaTeX and Bash.
-
- + Proficiency in supervised classification and statistical modeling applied to
-   digital soil mapping.
-
- + Expertise in digital mapping, focused on soil science, but applicable to
-   diverse scientific fields.
-
- + Awarded with the national [Scientific Initiation Highlight
+ + Winner of the national award [Undergraduate Research Highlight
    Prize](https://www.gov.br/cnpq/pt-br/assuntos/noticias/premios/conheca-os-vencedores-da-18a-edicao-do-premio-destaque-na-iniciacao-cientifica-e-tecnologica-do-cnpq)
    from the National Council for Scientific and Technological Development
    (CNPq).
 
- + Advanced English skills -- Highest score rank (C1) in TOEFL -- ITP (2017).
+ + Knowledge and experience in data analysis using R and Python.
 
- + Intermediary Japanese skills.
+ + Basic knowledge in C++, Java, LaTeX and Bash.
+
+ + Proficiency in statistical modeling applied to digital soil mapping.
+ 
+ + Specialist in pXRF and Vis-NIR applied to soil assessment.
+
+ + Expertise in digital soil mapping using geoprocessing tools (QGIS, GRASS, SAGA, R).
+
+ + Large experience in scientific writing in both English and Portuguese.
+
+ + Advanced English skills and intermediary Japanese skills.
 
 \multicolsectionend <!-- ^ this empty line is important! It won't work without it -->
 
-\multicolsectionstart{Published Scientific Works}{2}
-\paperentry{A sensors-based profile heterogeneity index for soil characterization}
-	  	   {https://doi.org/10.1016/j.catena.2021.105670}
-	  	   {Catena}
-      	   {2021-12 | journal-article}
+\multicolsectionstart{Published Scientific Works (30)}{2}
 
-\paperentry{Formation and variation of a 4.5 m deep Oxisol in southeastern Brazil}
-           {https://doi.org/10.1016/j.catena.2021.105492}
-	  	   {Catena}
-      	   {2021-11 | journal-article}
+\paperentry{pXRF in tropical soils: Methodology, applications, achievements and challenges}{https://doi.org/10.1016/bs.agron.2020.12.001}{Advances in Agronomy}{2021 | book-chapter}
 
-\paperentry{Prediction of soil nutrient content via pXRF spectrometry and its spatial variation in a highly variable tropical area}
-           {https://doi.org/10.1007/s11119-021-09825-8}
-	  	   {Pricision Agriculture}
-      	   {2021-06 | journal-article}
+\paperentry{Tracing tropical soil parent material analysis via portable X-ray fluorescence (pXRF) spectrometry in Brazilian Cerrado}{https://doi.org/10.1016/j.geoderma.2018.10.026}{Geoderma}{2019 | journal-article}
 
+\paperentry{Proximal sensor data fusion for Brazilian soil properties prediction: Exchangeable/available macronutrients, aluminum, and potential acidity}{https://doi.org/10.1016/j.geodrs.2022.e00573}{Geoderma Regional}{2022 | journal-article}
 
-\paperentry{National-scale spatial variations of soil magnetic susceptibility in Brazil}
-           {https://doi.org/10.1016/j.jsames.2021.103191}
-	  	   {Journal of South American Earth Sciences}
-      	   {2021-06 | journal-article}
+\paperentry{From sensor data to Munsell color system: Machine learning algorithm applied to tropical soil color classification via Nix™ Pro sensor}{https://doi.org/10.1016/j.geoderma.2020.114471}{Geoderma}{2020 | journal-article}
 
-\paperentry{Rapid soil fertility prediction using X-ray fluorescence data and machine learning algorithms}
-           {https://doi.org/10.1016/j.catena.2020.105003}
-	  	   {Catena}
-      	   {2021-02 | journal-article}
+\paperentry{Formation and variation of a 4.5 m deep Oxisol in southeastern Brazil}{https://doi.org/10.1016/j.catena.2021.105492}{Catena}{2021 | journal-article}
 
-\paperentry{Digital soil mapping: Predicting soil classes distribution in large areas based on existing soil maps from similar small areas}
-           {https://doi.org/10.1590/1413-7054202145007921}
-	  	   {Ciência e Agrotecnologia}
-      	   {2021 | journal-article}
+\paperentry{Soil parent material prediction for Brazil via proximal soil sensing}{https://doi.org/10.1016/j.geodrs.2020.e00310}{Geoderma Regional}{2020 | journal-article}
 
-\paperentry{pXRF in tropical soils: Methodology, applications, achievements and challenges}
-           {https://doi.org/10.1016/bs.agron.2020.12.001}
-	  	   {Advances in Agronomy}
-      	   {2021 | book-chapter}
+\paperentry{Parent material distribution mapping from tropical soils data via machine learning and portable X-ray fluorescence (pXRF) spectrometry in Brazil}{https://doi.org/10.1016/j.geoderma.2019.113885}{Geoderma}{2019| journal-article}
 
-\paperentry{X-ray fluorescence spectrometry applied to digital mapping of soil fertility attributes in tropical region with elevated spatial variability}
-           {https://doi.org/10.1590/0001-3765202120200646}
-	  	   {Anais da Academia Brasileira de Ciências}
-      	   {2021 | journal-article}
+\paperentry{Pedogenic processes in a chronosequence of very deeply weathered soils in southeastern Brazil}{https://doi.org/10.1016/j.catena.2022.106362}{Catena}{2022 | journal-article}
 
-\paperentry{From sensor data to Munsell color system: Machine learning algorithm applied to tropical soil color classification via Nix™ Pro sensor}
-           {https://doi.org/10.1016/j.geoderma.2020.114471}
-	  	   {Geoderma}
-      	   {2020-10 | journal-article}
+\paperentry{Combining Proximal and Remote Sensors in Spatial Prediction of Five Micronutrients and Soil Texture in a Case Study at Farmland Scale in Southeastern Brazil}{https://doi.org/10.3390/agronomy12112699}{Agronomy}{2022 | journal-article}
 
-\paperentry{Soil texture prediction using portable X-ray fluorescence spectrometry and visible near-infrared diffuse reflectance spectroscopy}
-           {https://doi.org/10.1016/j.geoderma.2020.114553}
-	  	   {Geoderma}
-      	   {2020-10 | journal-article}
+\paperentry{National-scale spatial variations of soil phosphorus retention capacity
+in Brazil}{https://doi.org/10.1016/j.pce.2022.103271}{Physics and Chemistry of the Earth}{2022 | journal-article}
 
-\paperentry{Soil parent material prediction for Brazil via proximal soil sensing}
-           {https://doi.org/10.1016/j.geodrs.2020.e00310}
-	  	   {Geoderma Regional}
-      	   {2020-09 | journal-article}
+\paperentry{From rock to soil: Elemental mobility during pedogenesis in a deep Ultisol profile at the Mantiqueira Mountain Range, Southeastern Brazil}{https://doi.org/10.1016/j.geodrs.2022.e00576}{Geoderma Regional}{2022 | journal-article}
 
-\paperentry{Soil subgroup prediction via portable X-ray fluorescence and visible near-infrared spectroscopy}
-           {https://doi.org/10.1016/j.geoderma.2020.114212}
-	  	   {Geoderma}
-      	   {2020-04 | journal-article}
+\paperentry{Mineralogy and pore size distribution of clayey Oxisols with granular structure and the effect of management systems}{https://doi.org/10.1016/j.still.2022.105479}{Soil and Tillage Research}{2022 | journal-article}
 
-\paperentry{Growth, mineral nutrition, and physiological parameters of Eucalyptus urophylla cultivated in soils with different nutrient reserves}
-           {https://doi.org/10.18671/scifor.v48n125.02}
-	  	   {Scientia Forestalis}
-      	   {2020-03 | journal-article}
+\paperentry{Using Nix color sensor and Munsell soil color variables to classify contrasting soil types and predict soil organic carbon in Eastern India}{https://doi.org/10.1016/j.compag.2022.107192}{Computers and Eletronics in Agriculture}{2022 | journal-article}
 
-\paperentry{Soils of the Brazilian Coastal Plains biome: prediction of chemical attributes via portable X-ray fluorescence (pXRF) spectrometry and robust prediction models}
-           {https://doi.org/10.1071/sr20136}
-	  	   {Soil Research}
-      	   {2020 | journal-article}
+\paperentry{Proximal sensor data fusion for tropical soil property prediction: Soil fertility properties}{https://doi.org/10.1016/j.jsames.2022.103873}{Journal of South American Earth Sciences}{2022 | journal-article}
 
-\paperentry{Parent material distribution mapping from tropical soils data via machine learning and portable X-ray fluorescence (pXRF) spectrometry in Brazil}
-           {https://doi.org/10.1016/j.geoderma.2019.113885}
-	  	   {Geoderma}
-      	   {2019-11 | journal-article}
+\paperentry{Proximal sensor data fusion and auxiliary information for tropical soil property prediction: Soil texture}{https://doi.org/10.1016/j.geoderma.2022.115936}{Geoderma}{2022 | journal-article}
 
-\paperentry{Tracing tropical soil parent material analysis via portable X-ray fluorescence (pXRF) spectrometry in Brazilian Cerrado}
-           {https://doi.org/10.1016/j.geoderma.2018.10.026}
-	  	   {Geoderma}
-      	   {2019-03 | journal-article}
+\paperentry{Prediction of soil organic matter content by combining data from Nix Pro color sensor and portable X-ray fluorescence spectrometry in tropical soils}{https://doi.org/10.1016/j.geodrs.2021.e00461}{Geoderma Regional}{2022 | journal-article}
+
+\paperentry{Variation of properties of two contrasting Oxisols enhanced by pXRF and Vis-NIR}{https://doi.org/10.1016/j.jsames.2022.103748}{Journal of South American Earth Sciences}{2022 | journal-article}
+
+\paperentry{Wood annual average increment and K, Ca and Mg mineral compartments in soils cultivated with eucalypt}{https://doi.org/10.18671/scifor.v49n132.02}{Scientia Forestalis}{2021 | journal-article}
+
+\paperentry{Chemical and mineralogical changes in the textural fractions of quartzite-derived tropical soils, along weathering, assessed by portable X-ray fluorescence spectrometry and X-ray diffraction}{https://doi.org/10.1016/j.jsames.2021.103634}{Journal of South American Earth Sciences}{2021 | journal-article}
+
+\paperentry{Study of an abnormal occurrence of Oxisols in strongly undulated relief in the south of Minas Gerais, Brazil, with support of pXRF and geomorphology}{http://doi.org/10.1590/1413-7054202145018121}{Ciência e Agrotecnologia}{2021 | journal-article}
+
+\paperentry{National-scale spatial variations of soil magnetic susceptibility in Brazil}{https://doi.org/10.1016/j.jsames.2021.103191}{Journal of South American Earth Sciences}{2021 | journal-article}
+
+\paperentry{A sensors-based profile heterogeneity index for soil characterization}{https://doi.org/10.1016/j.catena.2021.105670}{Catena}{2021 | journal-article}
+
+\paperentry{Prediction of soil nutrient content via pXRF spectrometry and its spatial variation in a highly variable tropical area}{https://doi.org/10.1007/s11119-021-09825-8}{Pricision Agriculture}{2021 | journal-article}
+
+\paperentry{Rapid soil fertility prediction using X-ray fluorescence data and machine learning algorithms}{https://doi.org/10.1016/j.catena.2020.105003}{Catena}{2021 | journal-article}
+
+\paperentry{Digital soil mapping: Predicting soil classes distribution in large areas based on existing soil maps from similar small areas}{https://doi.org/10.1590/1413-7054202145007921}{Ciência e Agrotecnologia}{2021 | journal-article}
+
+\paperentry{X-ray fluorescence spectrometry applied to digital mapping of soil fertility attributes in tropical region with elevated spatial variability}{https://doi.org/10.1590/0001-3765202120200646}{Anais da Academia Brasileira de Ciências}{2021 | journal-article}
+
+\paperentry{Soil texture prediction using portable X-ray fluorescence spectrometry and visible near-infrared diffuse reflectance spectroscopy}{https://doi.org/10.1016/j.geoderma.2020.114553}{Geoderma}{2020 | journal-article}
+
+\paperentry{Soil subgroup prediction via portable X-ray fluorescence and visible near-infrared spectroscopy}{https://doi.org/10.1016/j.geoderma.2020.114212}{Geoderma}{2020 | journal-article}
+
+\paperentry{Growth, mineral nutrition, and physiological parameters of Eucalyptus urophylla cultivated in soils with different nutrient reserves}{https://doi.org/10.18671/scifor.v48n125.02}{Scientia Forestalis}{2020 | journal-article}
+
+\paperentry{Soils of the Brazilian Coastal Plains biome: prediction of chemical attributes via portable X-ray fluorescence (pXRF) spectrometry and robust prediction models}{https://doi.org/10.1071/sr20136}{Soil Research}{2020 | journal-article}
 
 \multicolsectionend
