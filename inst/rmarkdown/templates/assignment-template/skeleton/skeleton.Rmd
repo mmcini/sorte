@@ -38,12 +38,16 @@ Header options include:
 ```{r, warning = F}
 # ---- Header opts:
 #               title, subtitle
+#               title, subtitle
 #               date_info (text that goes after title/subtitle)
 #               course_info (text at the bottom left of the page)
 #               author_info (text at the bottom left of the page)
+#               bibliography: name of bib file
+#               csl: citation styile
+#               reference-section-title: title of the reference section
 #               font (typeface)
 #               sansfont (typeface of sans serif font, xelatex only)
-#               fontsize (default=11pt),
+#               fontsize (default=12pt),
 #               papersize (default=a4paper),
 #               fontenc (font encode --default=T1),
 #               language (babel package --default=english),

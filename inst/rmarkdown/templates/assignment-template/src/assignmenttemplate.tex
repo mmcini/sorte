@@ -3,6 +3,9 @@
 %               date_info (text that goes after title/subtitle)
 %               course_info (text at the bottom left of the page)
 %               author_info (text at the bottom left of the page)
+%               bibliography: name of bib file
+%               csl: citation styile
+%               reference-section-title: title of the reference section
 %               font (typeface)
 %               sansfont (typeface of sans serif font, xelatex only)
 %               fontsize (default=12pt),
@@ -206,6 +209,35 @@ $header-includes$
 $endfor$
 % ============================================================================
 
+% Citations ==================================================================
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\baselineskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+$endif$
+% ============================================================================
+
 % ============================================================================
 % DOCUMENT
 % ============================================================================
@@ -231,9 +263,9 @@ $endfor$
     \rule{\textwidth}{1mm}
 
     \raggedleft
-    
+
     \vspace{5mm}
-    
+
 
     \courseinfo
 
