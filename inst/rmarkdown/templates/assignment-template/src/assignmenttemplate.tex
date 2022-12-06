@@ -169,7 +169,6 @@ $if(indent_first)$
 \usepackage{indentfirst}
 $endif$
 \setlength{\parindent}{$if(indent)$$indent$$else$1.2cm$endif$}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
 
 % page formatting
 % header options
@@ -292,13 +291,16 @@ $endif$
     \dateinfo
 \end{minipage}
 
+\end{titlepage}
+
 % restore previous margin options
 \restoregeometry
 
-\end{titlepage}
-
 $if(toc)$
 \tableofcontents
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\newpage
 $endif$
 
 $body$
